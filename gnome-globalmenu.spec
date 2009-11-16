@@ -7,12 +7,18 @@ Group:		Applications/Communications
 Source0:	http://gnome2-globalmenu.googlecode.com/files/%{name}-%{version}.tar.gz
 # Source0-md5:	c56f85e1f02546d3952f1474c9b388b4
 URL:		http://code.google.com/p/gnome2-globalmenu/
+BuildRequires:	GConf2-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.16.0
 BuildRequires:	gtk+2-devel >= 2:2.6.0
 BuildRequires:	intltool >= 0.35.5
+BuildRequires:	gnome-menus-devel
+BuildRequires:	gnome-panel-devel
+BuildRequires:	libnotify-devel
 BuildRequires:	libtool
+BuildRequires:	libwnck-devel >= 2.16.0
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
