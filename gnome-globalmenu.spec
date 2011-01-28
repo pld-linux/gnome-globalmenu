@@ -12,10 +12,10 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.16.0
-BuildRequires:	gtk+2-devel >= 2:2.6.0
-BuildRequires:	intltool >= 0.35.5
 BuildRequires:	gnome-menus-devel
 BuildRequires:	gnome-panel-devel
+BuildRequires:	gtk+2-devel >= 2:2.6.0
+BuildRequires:	intltool >= 0.35.5
 BuildRequires:	libnotify-devel
 BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.16.0
@@ -27,8 +27,8 @@ Global Menu is the globally-shared menu bar of all applications
 launched in your desktop session.
 
 %package devel
-Summary: Headers for libgnomemenu
-Group:	Development/Libraries
+Summary:	Headers for libgnomemenu
+Group:		Development/Libraries
 
 %description devel
 Headers for libgnomemenu.
@@ -55,6 +55,8 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post -p /sbin/ldconfig
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README README.GNOME README.XFCE
@@ -67,9 +69,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_pixmapsdir}/globalmenu.png
 
 %files devel
+%defattr(644,root,root,755)
 %{_libdir}/libgnomenu.la
 %{_libdir}/libgnomenu.so
 %{_pkgconfigdir}/libgnomenu.pc
 %{_includedir}/libgnomenu/libgnomenu.h
-
-%post -p /sbin/ldconfig
