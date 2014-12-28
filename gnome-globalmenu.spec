@@ -10,7 +10,7 @@ URL:		http://code.google.com/p/gnome2-globalmenu/
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.16.0
 BuildRequires:	gnome-menus-devel
 BuildRequires:	gnome-panel-devel
